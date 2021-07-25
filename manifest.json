@@ -1,0 +1,31 @@
+{
+    "manifest_version": 2,
+    "name": "AutoArchive",
+    "description": "Automatically archives mails with a single click to preconfigured folders.",
+    "version": "1.0",
+    "author": "Erik Hennig",
+    "applications": {
+        "gecko": {
+            "id": "autoarchive@erik-hennig.me",
+            "strict_min_version": "78.0"
+        }
+    },
+    "background": {
+	    "scripts": [
+		    "common.js"
+	    ]},
+    "message_display_action": {
+        "default_title": "AutoArchive",
+        "default_icon": "images/archive-32px.png"
+    },
+    "permissions": [
+        "messagesRead",
+        "accountsRead",
+        "messagesMove"
+    ],
+    "icons": {
+        "64": "images/archive.png",
+        "32": "images/archive-32px.png",
+        "16": "images/archive-16px.png"
+    }
+}
