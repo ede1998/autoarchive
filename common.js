@@ -1,5 +1,5 @@
 browser.messageDisplay.onMessageDisplayed.addListener((tab, message) => {
-	console.log(`Message displayed in tab ${tab.id}: ${message.subject}`);
+	console.log(`Message displayed in tab ${tab.id}:`, message);
 	findApplicableRule(message).then(rule => {
 		console.log('Found rule:', rule);
 		if (rule == null) {
@@ -27,7 +27,7 @@ browser.messageDisplayAction.onClicked.addListener(async tab => {
 	console.log('Found applicable rule:', rule);
 	const destination = await parseIdent(rule.path);
 	console.log('Determined location to move to:', destination);
-	await browser.messages.copy([message.id], destination);
+	await browser.messages.move([message.id], destination);
 });
 
 async function getAccountId(name) {

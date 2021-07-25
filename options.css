@@ -1,0 +1,15 @@
+#rules input[type=text] {
+	box-sizing: border-box;
+	background-color: #f8f8f8;
+	color: black;
+}
+
+#importexport {
+	margin: 8px 0;
+}
+
+#exportdata {
+	width: 100%;
+	min-width: 100%;
+	min-height: 150px;
+}
