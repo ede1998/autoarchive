@@ -18,10 +18,15 @@
         "default_title": "AutoArchive",
         "default_icon": "images/archive-32px.png"
     },
+    "options_ui": {
+	    "page": "options.html",
+	    "browser_style": true
+    },
     "permissions": [
         "messagesRead",
         "accountsRead",
-        "messagesMove"
+        "messagesMove",
+	"storage"
     ],
     "icons": {
         "64": "images/archive.png",

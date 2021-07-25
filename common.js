@@ -4,11 +4,11 @@ browser.messageDisplayAction.onClicked.addListener(async tab => {
 	const tabId = tab.id;
 	const message = await browser.messageDisplay.getDisplayedMessage(tabId);
 	console.log(message);
-	const ident = "privat@erik-hennig.me/Archives/2021/internet/netflix";
+	const ident = "privat@erik-hennig.me/Archives/2021";
 	const { accountName, path } = split_ident(ident);
 	const accountId = await getAccountId(accountName);
 	console.log(accountId);
-	await browser.messages.copy([message.id], { accountId: accountId, path: path});
+	await browser.messages.move([message.id], { accountId: accountId, path: path});
 });
 
 async function getAccountId(name) {
