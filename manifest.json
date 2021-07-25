@@ -28,6 +28,7 @@
         "messagesMove",
 	"storage"
     ],
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; default-src 'self'",
     "icons": {
         "64": "images/archive.png",
         "32": "images/archive-32px.png",
