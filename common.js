@@ -1,3 +1,16 @@
+browser.messageDisplay.onMessageDisplayed.addListener((tab, message) => {
+	console.log(`Message displayed in tab ${tab.id}: ${message.subject}`);
+	findApplicableRule(message).then(rule => {
+		console.log('Found rule:', rule);
+		if (rule == null) {
+			browser.messageDisplayAction.disable(tab.id);
+		}
+		else {
+			browser.messageDisplayAction.enable(tab.id);
+		}
+	});
+});
+
 browser.messageDisplayAction.onClicked.addListener(async tab => {
 	console.log('Archiving current message.');
 	const tabId = tab.id;
@@ -14,7 +27,7 @@ browser.messageDisplayAction.onClicked.addListener(async tab => {
 	console.log('Found applicable rule:', rule);
 	const destination = await parseIdent(rule.path);
 	console.log('Determined location to move to:', destination);
-	await browser.messages.move([message.id], destination);
+	await browser.messages.copy([message.id], destination);
 });
 
 async function getAccountId(name) {
@@ -38,7 +51,7 @@ async function parseIdent(ident) {
 
 	return { accountId, path };
 }
-	
+
 async function findApplicableRule(message) {
 	const storage = await browser.storage.local.get({ rules: [] });
 	return storage?.rules?.find(rule => {
