@@ -33,9 +33,9 @@ function getRules() {
 
 function createRuleInputs(path, selector) {
 	console.log('Creating new rule');
-	path = path ?? "";
-	selector = selector ?? "";
-	const inputs = `<div>
+	path = escapeAttribute(path ?? "");
+	selector = escapeAttribute(selector ?? "");
+	const inputs = `<div class="rule">
 		    <input type="text" class="path" value="${path}" placeholder="path"/>
 		    <input type="text" class="selector" value="${selector}" placeholder="JS selector function" />
 		    <input type="button" class="reset" value="-" />
@@ -43,6 +43,10 @@ function createRuleInputs(path, selector) {
 	let form = document.getElementById('rules');
 	form.insertAdjacentHTML('beforeend', inputs);
 	form.querySelectorAll('.reset').forEach(btn => btn.addEventListener('click', () => removeRuleInput(btn)));
+}
+
+function escapeAttribute(text) {
+	return text.replaceAll('"', '&quot;');
 }
 
 function removeRuleInput(removeButton) {
