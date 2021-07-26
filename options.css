@@ -1,7 +1,26 @@
-#rules input[type=text] {
+.path, .selector {
 	box-sizing: border-box;
 	background-color: #f8f8f8;
 	color: black;
+}
+
+.path {
+	width: 100%;
+}
+
+.selector {
+	flex-grow: 20;
+}
+
+.reset {
+	margin-left: 4px;
+}
+
+.rule {
+	margin-bottom: 10px;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
 }
 
 #importexport {
@@ -12,4 +31,6 @@
 	width: 100%;
 	min-width: 100%;
 	min-height: 150px;
+	background-color: #f8f8f8;
+	color: black;
 }
