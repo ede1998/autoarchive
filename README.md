@@ -27,7 +27,7 @@ An example configuration might look like this:
     },
     {
         "path": "Local Folders/Trash",
-        "selector": "const author = message.author.replace("@", "@@"); return author === 'SpamBot <spam@@bot.example>';"
+        "selector": "const author = message.author.replace('@', '@@'); return author === 'SpamBot <spam@@bot.example>';"
     }
 ]
 ```
