@@ -8,7 +8,7 @@ If pressed the mail is archived to the preconfigured folder.
 The addon can be configured via the options tab. You can also import/export the settings there.
 As of now, the only settings are the rules for which mail has to be archived into which folder.
 
-A rules consists of 2 values:
+A rule consists of 2 values:
 - **path** determines the destination folder for a mail to be archived to. It has the following form: `account_name/path/to/destination/folder`.
   Path supports substitution of the current year: `${year}` is replaced with the current year, e.g. `2021`.
 - **selector** is a JS function body that receives `message` as an argument of type [MessageHeader](https://webextension-api.thunderbird.net/en/latest/messages.html#messageheader)
