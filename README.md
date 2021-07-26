@@ -41,6 +41,11 @@ archive folder split into years. If you want more specialized folders, you're ou
 ### There is no archiving button on my mail.
 Please make sure there is an archiving rule that applies to this mail.
 
+### There is no archiving button on my mail and I am sure that I made a rule for it.
+Maybe the rule doesn't match the mail because some field has a different value than you expect.
+I noticed this behaviour when doing an exact match for the author field. Thunderbird hides the quotes wrapping the author name.
+To check if this might be the case for you, you can check the values in the raw mail (`More > View Source`).
+
 ### Why does AutoArchive run user provided javascript? Isn't that totally unsafe?!
 Yes it probably is. However the addon is mostly for myself and just passing a JS function as selector was
 way easier than implemented some kind of filter system.
